@@ -26,33 +26,6 @@
     </div>
   </div>
   <script src="confetti.js"></script>
-    <script>
-    function resizeConfettiCanvas() {
-      const canvas = document.getElementById('confetti-canvas');
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    }
-
-    function checkAnswer(num) {
-      const resultDiv = document.getElementById('result');
-      const confetti = document.getElementById('confetti-canvas');
-      if (num === 3) {
-        confetti.classList.remove('hidden');
-        resizeConfettiCanvas();
-        window.confetti && window.confetti({
-          particleCount: 120,
-          spread: 90,
-          origin: { y: 0.6 }
-        });
-        setTimeout(() => { window.location.href = "win.html"; }, 1500); // pindah ke win.html setelah confetti
-      } else {
-        resultDiv.textContent = "Coba lagi ya!";
-      }
-    }
-    window.addEventListener('resize', () => {
-      const confetti = document.getElementById('confetti-canvas');
-      if (!confetti.classList.contains('hidden')) resizeConfettiCanvas();
-    });
   <script src="script.js"></script>
   <script>
     function goToHome() {
