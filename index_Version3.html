@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Ulang Tahun Dora!</title>
+  <!-- Coop Heavy font substitute: Luckiest Guy from Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="landing">
+  <div class="overlay">
+    <img class="header-img" src="Messa.jpg" alt="Ucapan Ulang Tahun Dora"/>
+    <button class="enter-btn" onclick="goToGame()">Enter</button>
+    <div class="desc-box">
+      Ayo bantu petualangan dora!
+    </div>
+    <div class="music-control">
+      <button id="music-btn" onclick="toggleMusic()">♫ Music</button>
+    </div>
+    <audio id="bg-music" src="music.mp3" loop preload="auto"></audio>
+  </div>
+  <script>
+    // Music control logic
+    const audio = document.getElementById('bg-music');
+    const musicBtn = document.getElementById('music-btn');
+    let isPlaying = false;
+
+    // Attempt autoplay on page load
+    window.addEventListener('DOMContentLoaded', () => {
+      playMusic();
+    });
+
+    function playMusic() {
+      audio.volume = 0.5;
+      audio.play().then(() => {
+        isPlaying = true;
+        musicBtn.textContent = '⏸ Pause Music';
+      }).catch(() => {
+        // Autoplay might be blocked, show Play button
+        musicBtn.textContent = '▶ Play Music';
+      });
+    }
+
+    function toggleMusic() {
+      if (audio.paused) {
+        audio.play();
+        isPlaying = true;
+        musicBtn.textContent = '⏸ Pause Music';
+      } else {
+        audio.pause();
+        isPlaying = false;
+        musicBtn.textContent = '▶ Play Music';
+      }
+    }
+
+    function goToGame() {
+      window.location.href = "game.html";
+    }
+  </script>
+</body>
+</html>
