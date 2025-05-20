@@ -1,0 +1,24 @@
+/* ...CSS sebelumnya tetap... */
+
+.music-control {
+  margin-top: 18px;
+}
+
+#music-btn {
+  background: #ffe14d;
+  color: #315ea7;
+  border: 2px solid #f47b2d;
+  border-radius: 16px;
+  font-family: inherit;
+  font-size: 1.1em;
+  font-weight: bold;
+  padding: 10px 24px;
+  cursor: pointer;
+  box-shadow: 0 1px 6px rgba(244,123,45,0.10);
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+#music-btn:hover {
+  background: #f9ca24;
+  color: #fff;
+  transform: scale(1.05);
+}
