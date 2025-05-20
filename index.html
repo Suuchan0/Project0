@@ -3,17 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Ucapan ulang tahun Dora</title>
-  <!-- Coop Heavy font substitute: Luckiest Guy from Google Fonts -->
+  <title></title>
   <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body class="landing">
   <div class="overlay">
-    <img class="header-img" src="Messa.png" alt="Ucapan Ulang Tahun Dora"/>
+    <p class="ucapan-ultah">
+      Selamat ulang tahun untuk Messi ku! Semoga hari-hari mu penuh dengan petualangan seru, tawa, dan kebahagiaan seperti perjalanan Dora.  
+      Semoga semua harapanmu terkabul dan persahabatan kita selalu abadi!
+    </p>
+    <img class="header-img" src="messa.jpg" alt="Ucapan Ulang Tahun Dora"/>
     <button class="enter-btn" onclick="goToGame()">Enter</button>
     <div class="desc-box">
-      Ayo bantu petualangan dora!
+      Ayo teman-teman bantu petualangan dora!
     </div>
     <div class="music-control">
       <button id="music-btn" onclick="toggleMusic()">♫ Music</button>
@@ -26,7 +29,6 @@
     const musicBtn = document.getElementById('music-btn');
     let isPlaying = false;
 
-    // Attempt autoplay on page load
     window.addEventListener('DOMContentLoaded', () => {
       playMusic();
     });
@@ -37,7 +39,6 @@
         isPlaying = true;
         musicBtn.textContent = '⏸ Pause Music';
       }).catch(() => {
-        // Autoplay might be blocked, show Play button
         musicBtn.textContent = '▶ Play Music';
       });
     }
